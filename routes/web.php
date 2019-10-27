@@ -41,5 +41,5 @@ Route::get('test', function(){
 //    $user = \App\User::find(1);
 //    return $user->posts;
     $post= \App\Post::find(400);
-    return $post ->images;
+    return $post ->videos;
 });
