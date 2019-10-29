@@ -26,4 +26,11 @@ class Post extends Model
     public function videos(){
         return $this->hasMany( Video::class);
     }
+
+    public function tags(){
+        return $this->belongsToMany( Tag::class);
+    }
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -40,6 +40,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('test', function(){
 //    $user = \App\User::find(1);
 //    return $user->posts;
-    $post= \App\Post::find(400);
-    return $post ->videos;
+//    $post= \App\Post::find(450);
+//    return $post ->comments;
+
+//    $category = \App\Category::find(10);
+//    return $category->posts;
+    $comment = \App\Comment::find(200);
+    return $comment->post;
 });
