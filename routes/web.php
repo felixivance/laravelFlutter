@@ -42,9 +42,10 @@ Route::get('test', function(){
 //    return $user->posts;
 //    $post= \App\Post::find(450);
 //    return $post ->comments;
+    return new \App\Http\Resources\PostsResource(\App\Post::paginate());
 
 //    $category = \App\Category::find(10);
 //    return $category->posts;
-    $comment = \App\Comment::find(200);
-    return $comment->post;
+//    $comment = \App\Comment::find(200);
+//    return $comment->post;
 });
