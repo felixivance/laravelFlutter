@@ -25,20 +25,20 @@
                     <input type="color" name="color" class="form-control" id="color" placeholder="color">
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Add Category</button>
+            <button class="btn btn-primary" type="submit">Add Comment</button>
         </form>
     </div>
     <div class="row m-2">
 
-        @foreach($categories as $category)
-           <div class="col-md-3 mb-2">
-               <div class="card">
-                   <div class="card-body">
-                       <li> {{ $category -> title }}</li>
-                       <div style="background-color: {{ $category->color }}">{{ $category-> color }}</div>
-                   </div>
-               </div>
-           </div>
+        @foreach($comments as $comment)
+            <div class="col-md-3 mb-2">
+                <div class="card">
+                    <div class="card-body">
+                        <li> {{ $comment -> content }}</li>
+                        <span>- By {{$comment->author->first_name}}</span>
+                    </div>
+                </div>
+            </div>
 
         @endforeach
     </div>

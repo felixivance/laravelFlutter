@@ -25,5 +25,23 @@ class TagController extends Controller
 //            ]
 //        );
     }
+    public function store(Request $request){
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        $tag = new Tag();
+
+        $tag->title = $request->get('title');
+
+        try{
+            $tag->save();
+        }catch (\Exception $ex){
+            return $ex->getMessage();
+        }
+
+        return redirect()->back()->with('message','Tag Created Successfully');
+
+    }
 
 }

@@ -55,8 +55,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group( function(){
     Route::get('categories','CategoryController@index');
+    Route::get('comments','CommentController@index');
     Route::get('categories/{id}', 'CategoryController@show');
     Route::get('tags', 'TagController@index');
     Route::get('tags/{id}', 'TagController@show');
     Route::post('categories', 'CategoryController@store')->name('save-category');
+    Route::post('tags', 'TagController@store')->name('save-tag');
 });
