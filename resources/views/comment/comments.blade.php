@@ -36,10 +36,16 @@
                     <div class="card-body">
                         <li> {{ $comment -> content }}</li>
                         <span>- By {{$comment->author->first_name}}</span>
+                        <br>
+                        <a href="{{ $comment->post->link() }}" class="btn btn-sm btn-primary"> Go to Post </a>
                     </div>
                 </div>
             </div>
 
         @endforeach
+    </div>
+
+    <div class="row ml-5">
+        {{$comments ->links() }}
     </div>
 @endsection
