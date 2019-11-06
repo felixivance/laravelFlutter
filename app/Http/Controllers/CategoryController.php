@@ -16,4 +16,11 @@ class CategoryController extends Controller
             ]
         );
     }
+    public function show($id){
+        return view( 'categories.category')->with(
+            [
+                'category' => Category::findOrFail($id)
+            ]
+        );
+    }
 }

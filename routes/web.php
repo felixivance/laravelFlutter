@@ -12,6 +12,7 @@
 */
 
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -37,15 +38,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 //  }
 //});
 
-Route::get('test', function(){
+//Route::get('test', function(){
 //    $user = \App\User::find(1);
 //    return $user->posts;
 //    $post= \App\Post::find(450);
 //    return $post ->comments;
-    return new \App\Http\Resources\PostsResource(\App\Post::paginate());
+//    return new \App\Http\Resources\PostsResource(\App\Post::paginate());
 
 //    $category = \App\Category::find(10);
 //    return $category->posts;
 //    $comment = \App\Comment::find(200);
 //    return $comment->post;
-});
+//});
+
+Route::get('test','CategoryController@index');
+Route::get('categories/{id}', 'CategoryController@show');
