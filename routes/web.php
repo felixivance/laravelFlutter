@@ -58,4 +58,5 @@ Route::middleware(['auth'])->group( function(){
     Route::get('categories/{id}', 'CategoryController@show');
     Route::get('tags', 'TagController@index');
     Route::get('tags/{id}', 'TagController@show');
+    Route::post('categories', 'CategoryController@store')->name('save-category');
 });
